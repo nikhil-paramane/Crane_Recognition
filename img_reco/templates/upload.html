@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block heavy_upload %}
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+
+	<div id="uploads">
+		<div class="dropzone" id="dropzone">Drop Image Here</div>
+		<form action="#">
+			<div class="url-box" id="input_img_url">
+				<input class="url-txt" type="url" name="" placeholder="Image url..." id="ipurl">
+				<a class="url-btn" href="#"></a>
+				<i class="far fa-arrow-alt-circle-down fa-lg"></i>
+			</div>
+			<div class="button_container">
+				<label for="imgupload" class="btn btn1" id="lblupl">Browse</label>
+				<input type="file" id="imgupload" accept="image/*" style="display: none;">
+			</div>
+			<div class="card" id="imgcard">
+				<img src="" id="image-cont" alt="" class="img-responsive" >
+			</div>
+			<button class="btn btn2" id="upbtn" style="visibility: hidden;" data-target="modal1">Detect</button>
+			<button class="btn btn3" id="goBackbtn" style="visibility: hidden;" formaction="/recognito/recognize" type="submit">Go Back</button>
+		</form>
+		<div class="bg-modal" id="modal1">
+			<div class="modal-content">
+				<h4 class="loadtxt">Hmm... Let me think.</h4>
+				<div id="loading"></div>
+			</div>
+		</div>
+	</div>
+		<div class="card dt-card" id="stat-table">
+     </div>
+
+
+	{% endblock %}
